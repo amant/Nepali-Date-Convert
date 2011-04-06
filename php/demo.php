@@ -81,8 +81,11 @@ strong {
 		<tr>
 			<td>Year:
 				<select name="yy">
-					<?php for($i = 1944; $i <= 2033; $i++): ?>
-					<option <?php if($i == gmdate('Y')): ?>selected="selected"<?php endif;?>>
+					<?php
+						$year = (isset($_GET['yy']) && isset($_GET['cnv']) && $_GET['cnv'] == 'to_nepali') ? $_GET['yy'] : gmdate('Y');
+						for($i = 1944; $i <= 2033; $i++):
+					?>
+					<option <?php if($i == $year): ?>selected="selected"<?php endif;?>>
 						<?php echo $i ?>
 					</option>
 					<?php endfor; ?>
@@ -90,8 +93,11 @@ strong {
 			</td>
 			<td>Month:
 				<select name="mm">
-					<?php for($i = 1; $i <= 12; $i++): ?>
-					<option <?php if($i == gmdate('m')): ?>selected="selected"<?php endif;?>>
+					<?php
+						$month = (isset($_GET['mm']) && isset($_GET['cnv']) && $_GET['cnv'] == 'to_nepali') ? $_GET['mm'] : gmdate('m');
+						for($i = 1; $i <= 12; $i++):
+					?>
+					<option <?php if($i == $month): ?>selected="selected"<?php endif;?>>
 						<?php echo $i ?>
 					</option>
 					<?php endfor; ?>
@@ -99,8 +105,11 @@ strong {
 			</td>
 			<td>Day:
 				<select name="dd">
-					<?php for($i = 1; $i <= 31; $i++): ?>
-					<option <?php if($i == gmdate('d')): ?>selected="selected"<?php endif;?>>
+					<?php
+						$day = (isset($_GET['dd']) && isset($_GET['cnv']) && $_GET['cnv'] == 'to_nepali') ? $_GET['dd'] : gmdate('d');
+						for($i = 1; $i <= 31; $i++):
+					?>
+					<option <?php if($i == $day): ?>selected="selected"<?php endif;?>>
 						<?php echo $i ?>
 					</option>
 					<?php endfor; ?>
@@ -128,8 +137,11 @@ strong {
 		<tr>
 			<td>Year:
 				<select name="yy">
-					<?php for($i = 2000; $i <= 2089; $i++): ?>
-					<option <?php if($i == $ndate['year']): ?>selected="selected"<?php endif;?>>
+					<?php
+						$year = (isset($_GET['yy']) && isset($_GET['cnv']) && $_GET['cnv'] == 'to_english') ? $_GET['yy'] : $ndate['year'];
+						for($i = 2000; $i <= 2089; $i++):
+					?>
+					<option <?php if($i == $year): ?>selected="selected"<?php endif;?>>
 						<?php echo $i ?>
 					</option>
 					<?php endfor; ?>
@@ -137,8 +149,11 @@ strong {
 			</td>
 			<td>Month:
 				<select name="mm">
-					<?php for($i = 1; $i <= 12; $i++): ?>
-					<option <?php if($i == $ndate['month']): ?>selected="selected"<?php endif;?>>
+					<?php
+						$month = (isset($_GET['mm']) && isset($_GET['cnv']) && $_GET['cnv'] == 'to_english') ? $_GET['mm'] : $ndate['month'];
+						for($i = 1; $i <= 12; $i++):
+					?>
+					<option <?php if($i == $month): ?>selected="selected"<?php endif;?>>
 						<?php echo $i ?>
 					</option>
 					<?php endfor; ?>
@@ -146,8 +161,11 @@ strong {
 			</td>
 			<td>Day:
 				<select name="dd">
-					<?php for($i = 1; $i <= 31; $i++): ?>
-					<option <?php if($i == $ndate['date']): ?>selected="selected"<?php endif;?>>
+					<?php
+						$day = (isset($_GET['dd']) && isset($_GET['cnv']) && $_GET['cnv'] == 'to_english') ? $_GET['dd'] : $ndate['date'];
+						for($i = 1; $i <= 31; $i++):
+					?>
+					<option <?php if($i == $day): ?>selected="selected"<?php endif;?>>
 						<?php echo $i ?>
 					</option>
 					<?php endfor; ?>
