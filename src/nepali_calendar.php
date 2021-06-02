@@ -1,5 +1,7 @@
 <?php
 
+namespace PatroAPI;
+
 class Nepali_Calendar
 {
 	// Data for nepali date
