@@ -2,7 +2,7 @@
 
 namespace PatroAPI;
 
-class Nepali_Calendar
+class NepaliCalendar
 {
 	// Data for nepali date
 	private $_bs = array(
