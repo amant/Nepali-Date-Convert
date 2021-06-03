@@ -30,6 +30,23 @@ class PatroAPITest extends TestCase
         $this->assertSame($this->Cal->_get_day_of_week(7), 'Saturday');
     }
 
+    public function testGetEnglishMonth(): void
+    {
+        $cal = new \PatroAPI\NepaliCalendar();
+        $this->assertSame($this->Cal->_get_english_month(1), 'January');
+        $this->assertSame($this->Cal->_get_english_month(2), 'February');
+        $this->assertSame($this->Cal->_get_english_month(3), 'March');
+        $this->assertSame($this->Cal->_get_english_month(4), 'April');
+        $this->assertSame($this->Cal->_get_english_month(5), 'May');
+        $this->assertSame($this->Cal->_get_english_month(6), 'June');
+        $this->assertSame($this->Cal->_get_english_month(7), 'July');
+        $this->assertSame($this->Cal->_get_english_month(8), 'August');
+        $this->assertSame($this->Cal->_get_english_month(9), 'September');
+        $this->assertSame($this->Cal->_get_english_month(10), 'October');
+        $this->assertSame($this->Cal->_get_english_month(11), 'November');
+        $this->assertSame($this->Cal->_get_english_month(12), 'December');
+    }
+
     protected function tearDown(): void
     {
         $this->Cal = null;
