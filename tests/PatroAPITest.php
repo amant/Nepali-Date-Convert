@@ -4,6 +4,9 @@ namespace PatroAPI\Test;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers NepaliCalendar::
+ */
 class PatroAPITest extends TestCase
 {
     private $Cal;
@@ -12,13 +15,10 @@ class PatroAPITest extends TestCase
     {
         $this->Cal = new \PatroAPI\NepaliCalendar();
     }
-    
-    public function testingTwoDateConversions(): void
-    {
-        $this->assertSame($this->Cal->eng_to_nep(2008, 11, 23), ['year' => 2065, 'month' => 8, 'date' => 8, 'day' => 'Sunday', 'nmonth' => 'Mangshir', 'num_day' => 1]);
-        $this->assertSame($this->Cal->nep_to_eng(2065, 8, 8), ['year' => 2008, 'month' => 11, 'date' => 23, 'day' => 'Sunday', 'emonth' => '', 'num_day' => 1, 'nmonth' => 'November']);
-    }
 
+    /**
+     * @covers NepaliCalendar::_get_day_of_week
+     */
     public function testGetDayOfTheWeek(): void
     {
         $this->assertSame($this->Cal->_get_day_of_week(1), 'Sunday');
@@ -30,6 +30,9 @@ class PatroAPITest extends TestCase
         $this->assertSame($this->Cal->_get_day_of_week(7), 'Saturday');
     }
 
+    /**
+     * @covers NepaliCalendar::_get_english_month
+     */
     public function testGetEnglishMonth(): void
     {
         $cal = new \PatroAPI\NepaliCalendar();
@@ -47,6 +50,9 @@ class PatroAPITest extends TestCase
         $this->assertSame($this->Cal->_get_english_month(12), 'December');
     }
 
+    /**
+     * @covers NepaliCalendar::_get_nepali_month
+     */
     public function testGetNepaliMonth(): void
     {
         $cal = new \PatroAPI\NepaliCalendar();
@@ -63,19 +69,21 @@ class PatroAPITest extends TestCase
         $this->assertSame($this->Cal->_get_nepali_month(11), "Falgun");
         $this->assertSame($this->Cal->_get_nepali_month(12), "Chaitra");
     }
-    
+
+    /**
+     * @covers NepaliCalendar::_is_leap_year
+     */
     public function testIsLeapYear(): void
     {
         $listOfLeapYearsBetween1900And2020 = [1904, 1908, 1912, 1916, 1920, 1924, 1928, 1932, 1936, 1940, 1944, 1948, 1952, 1956, 1960, 1964, 1968, 1972, 1976, 1980, 1984, 1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020];
-        
+
         foreach ($listOfLeapYearsBetween1900And2020 as $year) {
-            $this->assertTrue( $this->Cal->is_leap_year($year) );
+            $this->assertTrue($this->Cal->is_leap_year($year));
         }
     }
-    
+
     protected function tearDown(): void
     {
         $this->Cal = null;
     }
-    
 }
