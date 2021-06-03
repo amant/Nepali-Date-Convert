@@ -105,44 +105,11 @@ class NepaliCalendar
 
 	public $debug_info = "";
 
-	/**
-	 * Return day
-	 *
-	 * @param int $day
-	 * @return string
-	 */
-	public function _get_day_of_week($day)
+	// TODO: change visibility (to private or something else) later as per requirement
+	public function _get_day_of_week(int $dayNumber): string
 	{
-		switch ($day) {
-			case 1:
-				$day = "Sunday";
-				break;
-
-			case 2:
-				$day = "Monday";
-				break;
-
-			case 3:
-				$day = "Tuesday";
-				break;
-
-			case 4:
-				$day = "Wednesday";
-				break;
-
-			case 5:
-				$day = "Thursday";
-				break;
-
-			case 6:
-				$day = "Friday";
-				break;
-
-			case 7:
-				$day = "Saturday";
-				break;
-		}
-		return $day;
+		$daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+		return $daysOfTheWeek[ $dayNumber - 1 ];
 	}
 
 	/**
