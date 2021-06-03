@@ -19,6 +19,17 @@ class PatroAPITest extends TestCase
         $this->assertSame($this->Cal->nep_to_eng(2065, 8, 8), ['year' => 2008, 'month' => 11, 'date' => 23, 'day' => 'Sunday', 'emonth' => '', 'num_day' => 1, 'nmonth' => 'November']);
     }
 
+    public function testGetDayOfTheWeek(): void
+    {
+        $this->assertSame($this->Cal->_get_day_of_week(1), 'Sunday');
+        $this->assertSame($this->Cal->_get_day_of_week(2), 'Monday');
+        $this->assertSame($this->Cal->_get_day_of_week(3), 'Tuesday');
+        $this->assertSame($this->Cal->_get_day_of_week(4), 'Wednesday');
+        $this->assertSame($this->Cal->_get_day_of_week(5), 'Thursday');
+        $this->assertSame($this->Cal->_get_day_of_week(6), 'Friday');
+        $this->assertSame($this->Cal->_get_day_of_week(7), 'Saturday');
+    }
+
     protected function tearDown(): void
     {
         $this->Cal = null;

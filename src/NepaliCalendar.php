@@ -111,7 +111,7 @@ class NepaliCalendar
 	 * @param int $day
 	 * @return string
 	 */
-	private function _get_day_of_week($day)
+	public function _get_day_of_week($day)
 	{
 		switch ($day) {
 			case 1:
