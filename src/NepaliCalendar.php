@@ -111,54 +111,12 @@ class NepaliCalendar
 		$daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 		return $daysOfTheWeek[ $dayNumber - 1 ];
 	}
-
-	/**
-	 * Return english month name
-	 *
-	 * @param int $m
-	 * @return string
-	 */
-	private function _get_english_month($m)
+	
+	// TODO: change visibility (to private or something else) later as per requirement
+	public function _get_english_month(int $monthNumber): string
 	{
-		$eMonth = FALSE;
-		switch ($m) {
-			case 1:
-				$eMonth = "January";
-				break;
-			case 2:
-				$eMonth = "February";
-				break;
-			case 3:
-				$eMonth = "March";
-				break;
-			case 4:
-				$eMonth = "April";
-				break;
-			case 5:
-				$eMonth = "May";
-				break;
-			case 6:
-				$eMonth = "June";
-				break;
-			case 7:
-				$eMonth = "July";
-				break;
-			case 8:
-				$eMonth = "August";
-				break;
-			case 9:
-				$eMonth = "September";
-				break;
-			case 10:
-				$eMonth = "October";
-				break;
-			case 11:
-				$eMonth = "November";
-				break;
-			case 12:
-				$eMonth = "December";
-		}
-		return $eMonth;
+		$englishMonthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		return $englishMonthNames[ $monthNumber - 1 ];
 	}
 
 	/**
