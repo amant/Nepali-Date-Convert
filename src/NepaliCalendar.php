@@ -118,67 +118,12 @@ class NepaliCalendar
 		$englishMonthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 		return $englishMonthNames[ $monthNumber - 1 ];
 	}
-
-	/**
-	 * Return nepali month name
-	 *
-	 * @param int $m
-	 * @return string
-	 */
-	private function _get_nepali_month($m)
+	
+	// TODO: change visibility (to private or something else) later as per requirement
+	public function _get_nepali_month(int $monthNumber): string
 	{
-		$n_month = FALSE;
-
-		switch ($m) {
-			case 1:
-				$n_month = "Baishak";
-				break;
-
-			case 2:
-				$n_month = "Jestha";
-				break;
-
-			case 3:
-				$n_month = "Ashad";
-				break;
-
-			case 4:
-				$n_month = "Shrawn";
-				break;
-
-			case 5:
-				$n_month = "Bhadra";
-				break;
-
-			case 6:
-				$n_month = "Ashwin";
-				break;
-
-			case 7:
-				$n_month = "kartik";
-				break;
-
-			case 8:
-				$n_month = "Mangshir";
-				break;
-
-			case 9:
-				$n_month = "Poush";
-				break;
-
-			case 10:
-				$n_month = "Magh";
-				break;
-
-			case 11:
-				$n_month = "Falgun";
-				break;
-
-			case 12:
-				$n_month = "Chaitra";
-				break;
-		}
-		return $n_month;
+		$nepaliMonthNames = ['Baishak','Jestha','Ashad','Shrawn','Bhadra','Ashwin','kartik','Mangshir','Poush','Magh','Falgun','Chaitra'];
+		return $nepaliMonthNames[ $monthNumber - 1 ];
 	}
 
 	/**
