@@ -47,6 +47,23 @@ class PatroAPITest extends TestCase
         $this->assertSame($this->Cal->_get_english_month(12), 'December');
     }
 
+    public function testGetNepaliMonth(): void
+    {
+        $cal = new \PatroAPI\NepaliCalendar();
+        $this->assertSame($this->Cal->_get_nepali_month(1), "Baishak");
+        $this->assertSame($this->Cal->_get_nepali_month(2), "Jestha");
+        $this->assertSame($this->Cal->_get_nepali_month(3), "Ashad");
+        $this->assertSame($this->Cal->_get_nepali_month(4), "Shrawn");
+        $this->assertSame($this->Cal->_get_nepali_month(5), "Bhadra");
+        $this->assertSame($this->Cal->_get_nepali_month(6), "Ashwin");
+        $this->assertSame($this->Cal->_get_nepali_month(7), "kartik");
+        $this->assertSame($this->Cal->_get_nepali_month(8), "Mangshir");
+        $this->assertSame($this->Cal->_get_nepali_month(9), "Poush");
+        $this->assertSame($this->Cal->_get_nepali_month(10), "Magh");
+        $this->assertSame($this->Cal->_get_nepali_month(11), "Falgun");
+        $this->assertSame($this->Cal->_get_nepali_month(12), "Chaitra");
+    }
+    
     protected function tearDown(): void
     {
         $this->Cal = null;
