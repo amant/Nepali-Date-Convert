@@ -176,28 +176,12 @@ class NepaliCalendar
 		return TRUE;
 	}
 
-	/**
-	 * Calculates wheather english year is leap year or not
-	 *
-	 * @param int $year
-	 * @return bool
-	 */
-	public function is_leap_year($year)
+	public function is_leap_year(int $year): bool
 	{
-		$a = $year;
-		if ($a % 100 == 0) {
-			if ($a % 400 == 0) {
-				return TRUE;
-			} else {
-				return FALSE;
-			}
-		} else {
-			if ($a % 4 == 0) {
-				return TRUE;
-			} else {
-				return FALSE;
-			}
-		}
+		if ($year % 4 !== 0) return false;
+		elseif ($year % 100 !== 0) return true;
+		elseif ($year % 400 !== 0) return false;
+		else return true;
 	}
 
 	/**
